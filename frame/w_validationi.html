@@ -1,0 +1,36 @@
+<div class="pageContent">
+	<form id="frm" method="post" action="../demo/listDemo!save.action" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);" showErrorLabel="false">
+		<div class="pageFormContent" layoutH="56">
+			<br/>
+			<br/>
+			<br/>
+		<fieldset>
+				<legend>用户信息</legend>
+			<table border="0" width="98%" class="edit_table" align="center">
+				<tr>
+					<td>姓名：</td>
+					<td><input name="user.name" id="userName" type="text" size="30" value=""/></td>
+					<td>工号：</td>
+					<td><input name="user.staffId" class="required" type="text" size="30" alt="请输入客户工号"/></td>
+					<td>用户名：</td>
+					<td><input name="user.loginName" class="required" type="text" size="30" alt="请输入用户名"/></td>
+				</tr>
+				<tr>
+					<td>单选框：</td>
+					<td><input type="radio" class="" name="c1" value="1" />选择1 &nbsp;&nbsp;&nbsp;<input type="radio" class="" name="c1" value="1" />选择1</td>
+					<td>复选框：</td>
+					<td><input type="checkbox" class="" style="border: 0px;" name="c1" value="1" />选择1 &nbsp;&nbsp;&nbsp;<input type="checkbox" class="" name="c1" value="1" />选择1</td>
+				</tr>
+			</table>
+		</fieldset>
+			<br><br><br>
+			<div class="formBar" style="text-align: center;">
+				<ul style="width: 63%;">
+					<li style="float: left;"><div class="buttonActive"><div class="buttonContent"><button id="saveBtn" type="submit">保存</button></div></div></li>
+					<li style="float: left;"><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+				</ul>			
+			</div>
+		</div>
+		
+	</form>
+</div>

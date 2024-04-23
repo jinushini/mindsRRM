@@ -1,0 +1,169 @@
+#weibosuo_pingshenbaogao td, #weibosuo_pingshenbaogao th {
+	font-family: "宋体";
+	margin:0;
+	padding:0;
+	line-height: 2;
+	font-size: 14pt;
+}
+
+#pingshenbaogao_jiben_xinxi{
+	margin:50pt 0 0 0;
+	padding:0;
+	line-height: 3;
+}
+
+#weibosuo_pingshenbaogao, #pingshenbaogao_wenjian_pingshenzu, #pingshenbaogao_wenjian_daibanshixiangbiao{
+	width: 550pt;
+	margin: auto;
+	font-size: 14pt;
+}
+
+#bianhao_miji_jieduan{
+	text-align:left;
+	float: right;
+	width: 150pt;
+}
+
+#bianhao_miji_jieduan th, #bianhao_miji_jieduan td{
+	font-size: 12pt;
+}
+
+#bianhao_miji_jieduan td{
+	text-align:center;
+	border-bottom:1px solid;
+	width: 70pt;
+}
+
+#pingshenbaogao_biaoti{
+	width: 550pt;
+	text-align:center;
+	border-bottom:solid #000 5px;
+	font-size: 18pt;
+	padding: 90pt 0 10pt 0;
+	}
+
+#pingshenbaogao_wenjian_biaoti{
+	font-size: 20pt;
+	font-weight:bold;
+	text-align:center;
+	
+	}
+
+#pingshenbaogao_wenjian_neirong{
+	margin:auto;
+	width: 300pt;
+	padding: 50pt 0 0 0;
+}
+
+#pingshenbaogao_wenjian_neirong table tr{
+	text-align:left;
+}
+
+#pingshenbaogao_wenjian_neirong table th{
+	font-size: 14pt;
+	width:75pt;
+	line-height: 3;
+}
+
+#pingshenbaogao_wenjian_neirong table td{
+	font-size: 14pt;
+}
+
+#pingshenbaogao_wenjian_jituanfengongsi{
+	text-align:center;
+	padding: 50pt 0 20pt 0;
+	font-size: 14pt;
+}
+
+#pingshenbaogao_wenjian, #pingshenbaogao_pingshenyijian{
+	min-height:680pt;
+	page-break-before: always;
+	overflow: auto;
+	border:solid #000 1px;
+	padding: 20pt 0 20pt 0;
+}
+
+#pingshenbaogao_pingshenwenjian, #pingshenbaogao_beichawenjian{
+	font-size: 14pt;
+	padding: 0 0 20pt 0;
+}
+
+#pingshenbaogao_beichawenjian{
+	font-size: 14pt;
+	padding: 50pt 0 20pt 0;
+}
+
+#pingshenbaogao_wenjian ol li{
+	font-size: 14pt;
+	line-height: 2;
+}
+
+#pingshenbaogao_pingshenyijian div{
+	font-size: 14pt;
+	margin:20pt 10pt 0 10pt;
+}
+
+#pingshenbaogao_wenjian_pingshenzu, #pingshenbaogao_wenjian_daibanshixiangbiao{
+	page-break-before: always;
+	padding: 50pt 0 50pt 0;
+}
+
+#pingshenbaogao_wenjian_pingshenzuqianming{
+	font-size:14pt;
+}
+
+#pingshenbaogao_pingshenyijian_qianshu{
+	font-size: 12pt;
+	text-align:left;
+	float: right;
+	width: 250pt;
+	padding: 50pt 0 0 0;
+}
+
+
+#pingshenbaogao_wenjian_daibanshixiangbiao_biaoti{
+	text-align:center;
+	font-size:18pt;
+	font-weight:bold;
+	padding: 0 0 10pt 0;
+}
+
+#pingshenbaogao_wenjian_daibanshixiangbiao_biaoge table, #pingshenbaogao_wenjian_pingshenzu_biaoge table, #pingshenbaogao_wenjian_daibanshixiangbiao_biaoge{
+	border:1px solid #000;
+	border-collapse:collapse;
+	width: 550pt;
+	margin: auto;
+	text-align:center;
+}
+
+#pingshenbaogao_wenjian_daibanshixiangbiao_biaoge table td,#pingshenbaogao_wenjian_daibanshixiangbiao_biaoge table th, #pingshenbaogao_wenjian_pingshenzu_biaoge table td, #pingshenbaogao_wenjian_pingshenzu_biaoge table th{
+	border:1px solid #000;
+}
+
+#pingshenbaogao_wenjian_daibanshixiangbiao_biaoge table .tds, #pingshenbaogao_wenjian_daibanshixiangbiao_biaoge table .tfs{
+	text-align:left;
+}
+
+#pingshenbaogao_wenjian_daibanshixiangbiao_qianshu{
+	width: 550pt;
+}
+
+#pingshenbaogao_wenjian_daibanshixiangbiao_qianshu_fuzeren{
+	font-size: 12pt;
+	float: left;
+	width: 275pt;
+	padding: 20pt 0 0 0;
+}
+
+#pingshenbaogao_wenjian_daibanshixiangbiao_qianshu_chanbao{
+	font-size: 12pt;
+	float: right;
+	width: 275pt;
+	padding: 20pt 0 0 0;
+}
+
+#pingshenbaogao_wenjian_daibanshixiangbiao_qianshu .riqi{
+	padding: 20pt 0 0 0;
+	font-size: 12pt;
+}
+

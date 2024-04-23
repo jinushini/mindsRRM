@@ -1,0 +1,382 @@
+/**
+body{
+	font-size: 5px;
+}
+*/
+
+/*------------------------链接的颜色-----------------------*/
+A{text-decoration:none;}
+A:LINK{color: #0000FF}
+A:VISITED {color: #0000FF}
+A:HOVER {color:red;}
+
+
+BODY{
+	topmargin:10px;
+}	
+/*---------------------Table Blue 样式---------------------*/
+.table_blue thead th,.table_blue thead td{
+	word-break:keep-all;
+}
+.table_blue,.table_blue th,.table_blue tr{
+	
+	border:1px solid #4A6DB2;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+.table_blue a{
+	font-size: 13px;
+}
+.table_blue td,th{
+	border:1px solid #4A6DB2;
+}
+
+.table_blue th{
+	background-color: #6699CC;
+	color: #FFFFFF;
+	font-size:13px;
+}
+
+.table_blue td{
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table_blue .selected_tr{
+	background-color: #f7f500;
+}
+
+.table_blue .slide_move{
+	background-color: #f7f588;
+}
+
+.div_table_blue{
+	border: 1px;
+	border-color: #555;
+	border-style: solid;
+	border-width: 1px;
+	width: 98%;
+}
+
+.table_blue a{
+	text-decoration:none;
+}
+/*---------------------Table 样式---------------------*/
+.table thead th,.table thead td{
+	word-break:keep-all;
+}
+.table,.table th,.table tr{
+	
+	border:1px solid #C5DBEC;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+.table a{
+	font-size: 13px;
+}
+.table td,th{
+	border:1px solid #C5DBEC;
+}
+
+.table th{
+	height:30px;
+	background: url("../images/th-back.JPG") repeat-x;
+}
+
+.table td{
+	text-align: center;
+	vertical-align: top;
+}
+
+.table .selected_tr{
+	background-color: #f7f500;
+}
+
+.table .slide_move{
+	background-color: #f7f588;
+}
+
+/*---------------------Edit Table 样式（编辑的列表TABLE）-----------------*/
+.edit-table{
+	margin-top: 5px;
+}
+.edit-table,.edit-table th,.edit-table tr{
+	
+	border:1px solid #4B97E3;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+.edit-table a{
+	font-size: 13px;
+}
+.edit-table td,th{
+	border:1px solid #4B97E3;
+}
+
+.edit-table th{
+	text-align: right;
+	width: 10%;
+}
+
+.edit-table td{
+	text-align: left;
+}
+.edit-table select{
+	font-size: 14px;
+}
+
+/*---------------------Table 样式---------------------*/
+.xm-table thead th,.table thead td{
+	word-break:keep-all;
+}
+.xm-table,.xm-table th,.xm-table tr{
+	
+	border:1px solid #C5DBEC;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+.xm-table a{
+	font-size: 13px;
+}
+.xm-table td,th{
+	border:1px solid #C3D1DC;
+}
+
+.xm-table th{
+	height:20px;
+	background: url("../images/xm-header.JPG") repeat-x;
+	background-color: #fff;
+}
+
+.xm-table td{
+	text-align: center;
+	vertical-align: top;
+	background-color: #fff;
+}
+
+/*---------------------Button 的样式-------------------*/
+.save-button{
+	background: url("../images/pic-05.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;	
+}
+.close-button{
+	background: url("../css/images/pic-10.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;
+}
+.back-button{
+	background: url("../images/pic-03.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;	
+}
+.add-button{
+	background: url("../images/pic-13.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;	
+}
+.eidt-button{
+	background: url("../images/pic-14.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;	
+}
+.ok-button{
+	background: url("../images/pic-02.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;	
+}
+.edit-button{
+	background: url("../images/pic-14.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;	
+}
+.delete-button{
+	background: url("../images/pic-16.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;	
+}
+.query-button{
+	background: url("../css/images/pic-01.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;	
+}
+.view-button{
+	background: url("../images/pic-15.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;
+}
+
+.clear-button{
+	background: url("../images/pic-07.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;
+}
+.submit-button{
+	background: url("../css/images/pic-04.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;
+}
+.report-button{
+	background: url("../images/pic-12.jpg");
+	border:0px;
+	width: 61px;
+	height:24px;
+	cursor: pointer;
+}
+/*---------------------DIV 边框样式---------------------*/
+.div-border{
+	border: 1px;
+	border-color: #555;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.div-border-blue{
+	border: 1px;
+	border-color: #4A6DB2;
+	border-style: solid;
+	border-width: 1px;
+}
+
+
+.title{
+	color: #004080;
+}
+.title hr{
+	color: #1F2787;
+	height: 1px;
+	width: 99%;
+	
+}
+/*--------------------DIV dialog-----------------------*/
+.dialog{
+	top:25%;
+	left:25%;
+	position:absolute;
+	border: 4px;
+	border-color: #A6C9E2;
+	border-style: solid;
+	border-width: 1px;
+	padding: 2px;
+	background-color: #FFF;
+	display: none;
+	z-index: 999;
+	filter:progid:DXImage Transform.Microsoft.Shadow(color=red,strength=4);
+}
+
+.dialog .title{
+	background-color:#DDECF7;
+	text-align:center;
+	background: url("../images/pic-21.png") 30%;
+	width: 100%;
+	height: 25px;
+	cursor: move;
+}
+
+.dialog .content{
+	margin-bottom:3px;
+	margin-left:3px;
+	margin-right:0px;
+	margin:6px;
+	width: 100%;
+	background-color: #FFF;
+	height: 80%;
+	overflow-x: none;
+	overflow-y: auto;
+}
+
+.dialog .footer{
+	width: 100%;
+	background-color: #FFF;
+	text-align: right;
+}
+.dialog .footer hr{
+	background-color: #A6C9E2;
+	color:#A6C9E2;
+	line-height: 1px;
+	border:none;
+	height: 1px;
+}
+
+/*---------------------分页---------------------*/
+.page-table,.page-table input,select{
+	font-size: 12px;
+}
+.page-table INPUT,select {
+	font-size: 10px;
+}
+
+
+/*--------------------红色字体--------------------*/
+.font-red{
+	color: red;
+}
+/*-----------------------------------------半透明效果hide div-----------------------------------*/
+.hide_body{
+	top:0%;
+	left:0%;
+	filter:Alpha(Opacity=30,style=0);
+	opacity:0.3;
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	display: none;
+	line-height: 100%;
+	vertical-align: middle;
+}
+
+/*--------------------Tab标签的切换--------------------*/
+.tab
+{
+	border: 1px solid;
+	border-color:#3F7DBC;
+	cursor:hand;
+	padding:0px 1px 0px 1px;
+ 	width: 30px;
+ 	background-color: #ECE9D8;
+ 	text-align: center;
+}
+.select_tab
+{
+	border: 1px solid;
+	border-color:#3F7DBC;
+	cursor:hand;
+	padding:0px 1px 0px 1px;
+ 	width: 30px;
+ 	background-color: #ECE9D8;
+ 	text-align: center;
+}
+.tabMoveover
+{
+	background-color: #FFD018;
+}
+.tabSelected
+{
+	background-color: #6699CC;
+	color: #FFFFFF;
+}

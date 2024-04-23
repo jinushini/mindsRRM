@@ -1,0 +1,120 @@
+.flow-frame{
+	width: 2480px; 
+	/* 此处定义整个流程图的长度，以保证横向滚动 */
+	background: url(../img/bg-arrow.gif) repeat-x 0px 13px;
+	min-height:600px;
+}
+
+/* 阶段框设置 */
+.stage{
+	float: left;
+	width: 350px;
+	margin: 0 30px;
+	padding: 0px;
+}
+
+/* 标题栏设置：包括字体、内外边距和背景，前景颜色 */
+.stage h1{
+	font-size: 24px;
+	display: block;
+	width: 330px;
+	float:left;
+	/* background-color: #3399FF; */
+	margin: 0px;
+	padding: 10px 0 10px 20px;
+	line-height: 1.5em;
+}
+
+/* 已完成（头部） */
+.complated-head{
+	background-color: #009999;
+}
+
+/* 进行中（头部） */
+.ongoing-head{
+	background-color: #CC9933;
+}
+
+/* 未执行（头部） */
+.comingsoon-head{
+	background-color: #6699cc;
+}
+
+.stage h1 span{
+	font-size: 14px;
+	display: block;
+	width: 330px;
+	float: left;
+	margin: 0px;
+	line-height: 1.5em;
+	font-weight: normal;
+}
+.setUserDiv{
+	width: 310px;
+	float: left;
+}
+
+img{
+	border:none;
+}
+/* 内容栏设置：包括字体、内外边距和背景，前景颜色 */
+.stage ul{
+	/* background-color: #B3D9FF; */
+	margin: 0px;
+	padding: 20px 10px 20px 20px;
+	line-height: 200%;
+	display:block;
+	float: left;
+	width: 320px;
+}
+
+/* 已完成（主体） */
+.complated-body{
+	background-color: #a7d7c5;
+}
+
+/* 进行中（主体） */
+.ongoing-body{
+	background-color: #f3ecd3;
+}
+
+/* 未执行（主体）*/
+.comingsoon-body{
+	background-color: #c8d9eb;
+}
+
+/* 质量 */
+.quality{
+	background-color: #99CCFF;
+}
+
+.stage li{
+	line-height: 2em;
+	list-style-type:none;
+	font-size: 18px;
+	display: block;
+	float: left;
+	width: 310px;
+}
+
+/* 高亮 */
+.stage li:hover{
+	background-color: #ecf2f9;
+}
+.ssaps-list-sub-model{
+	margin: 10px 0 10px 30px;
+	font-size: 85%;
+}
+.ssaps-list-sub-model span{
+	margin: 10px 0px;
+}
+
+.stage ul span{
+	display: block;
+/* 	float: left;
+	width: 280px; */
+}
+
+.stage li span img{
+	margin: 3px 15px 3px 0;
+}

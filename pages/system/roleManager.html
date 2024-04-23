@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>My First Grid</title>
+ 
+<link rel="stylesheet" type="text/css" media="screen" href="../../css/redmond/jquery-ui-1.7.3.custom.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../css/ui.jqgrid.css" />
+ 
+<script src="../../js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="../../js/grid.locale-cn.js" type="text/javascript"></script>
+<script src="../../js/jquery.jqGrid.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+ 	$(function(){
+        	jQuery("#roleList").jqGrid({
+		       	url: "roleManager!showAllRole.action",
+		       	datatype: "json",
+		       	mtype:"post",
+		       	height: 465,
+		       	//width:600,
+		       	rowNum: 20,
+		       	rownumbers:true,
+		       	autowidth:true,
+		       	pagerpos:'center',
+		       	rowList: [10,20,30],
+	        	colNames:['序号','角色名称','角色顺序','系统标识'],
+	          	colModel:[
+	          		{name:'id',index:'r.id', width:60, sorttype:"int",hidden:true},
+	          		{name:'name',index:'r.name', width:90, sorttype:"string"},
+	          		{name:'train',index:'r.train', width:50, sorttype:"int"},
+	          		{name:'sysCode',index:'r.sysCode', width:50, sorttype:"string"}
+	          	],
+	          	pager: "#pRoleList",
+	          	viewrecords: true,
+	          	jsonReader:{
+	          		repeatitems:false,
+	          		root:"list",
+	          		page:"page.pageNo",
+	          		total:"page.totalPage",
+	          		records:"page.count"
+	          	},
+	          	prmNames:{
+	          		page:"page.pageNo",
+	          		rows:"page.pageSize",
+	          		sort:"sort",
+	          		order:"order"
+	          	}
+	       }).navGrid(
+	       		'#pRoleList',
+	       		{edit:false,add:false,del:false,search:true,searchtext:"查询",refreshtext:"刷新"},
+	       		{},
+	       		{},
+	       		{},
+				{closeOnEscpe:true,multipleSearch:true,closeAfterSearch:true}
+			 ).jqGrid("navButtonAdd","#pRoleList",
+				{caption:"添加",onClickButton:add,position:"last"}
+			 ).jqGrid("navButtonAdd","#pRoleList",
+				{caption:"修改",onClickButton:edit,position:"last"}
+			 ).jqGrid("navButtonAdd","#pRoleList",
+				{caption:"删除",onClickButton:del,position:"last"}
+			 ).jqGrid("navButtonAdd","#pRoleList",
+				{caption:"设置权限",onClickButton:setAuth,position:"last"}
+			 );
+			
+ 		function edit(){
+ 			
+ 			var id=jQuery("#roleList").jqGrid("getGridParam","selrow");
+ 			if(id==null){
+ 				alert("请选择要修改的数据!");
+ 				return ;
+ 			}
+ 			window.location.href="role!update.action?oid="+id;
+ 		}
+ 		
+ 		function add(){
+ 			window.location.href="addRole.jsp";
+ 		}
+ 		
+ 		function del(){
+ 			var id=jQuery("#roleList").jqGrid("getGridParam","selrow");
+ 			if(id==null){
+ 				alert("请选择要删除的数据!");
+ 				return ;
+ 			}
+ 			
+ 			$.get(
+				"roleManager!deleteRole.action",{
+					"roleId":id
+				},function(data,textStatus){
+					if(data=="success"){
+						jQuery("#roleList").jqGrid("delRowData",id);
+						alert('删除成功!');
+					}else{
+						alert('登陆超时');
+					}
+				});
+ 		}
+ 		
+ 		function setAuth(){
+ 			var id=jQuery("#roleList").jqGrid("getGridParam","selrow");
+ 			if(id==null){
+ 				alert("请选择要修改的数据!");
+ 				return ;
+ 			}
+ 			window.location.href="showMenusTree!show.action?roleId="+id;
+ 		}
+ 	});
+ 	
+</script>
+</head>
+<body>
+<table id="roleList"></table>
+<div id="pRoleList"></div>
+</body>
+</html>

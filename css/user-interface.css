@@ -1,0 +1,93 @@
+.app_icon{
+	width:75px;
+	text-align:center; 
+	float:left;
+	position: relative;
+	padding: 10px;
+}
+.app_icon a{
+	color: #666;
+	text-decoration: none;
+}
+.app_icon a span{
+	line-height:40px;
+}
+
+.app_icon a:hover{
+	color:#65AAF1;
+}
+
+.icon_width{
+	width: 33px;
+	margin: 4px; 
+
+	
+}
+
+	
+	
+.blood_bar{
+	height:5px;
+	float:left; 
+	width:50px; 
+	margin-left:12px
+}
+.badge_setting{
+	background-color: red; 
+	position: absolute; 
+	top: 0px; 
+	left: 42px;
+}
+.user_photo{
+	width: 100px;
+	height: 100px; 
+	border:5px solid #666; 
+	border-radius: 15px;
+	float: left;
+}
+
+.user_photo_setting{
+	font-size:100px; 
+	margin:0px 9px; 
+	color: #666;
+}
+.welcome_word{
+	padding: 10px 20px 10px 15px;
+	font: 18px;
+	color: #666;
+	width: 400px;
+	float: left;
+	font-size: 18px;
+
+}
+.welcome_pad{
+	float: left;
+	width: 500px;
+	padding: 0px 5px;
+	border-width: 0px;
+	background-color: white;
+
+}
+#interface{
+	background-color:white;
+	border-width: 0px;
+}
+.fixup{
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    line-height: 100%;
+    font-family: Arial, sans-serif;
+}
+.pageContent .panelBar .toolBar a span{
+	color:#000;
+} 
+/*��һҳ��һҳ*/
+.pagination {
+    margin: 0 0;
+}

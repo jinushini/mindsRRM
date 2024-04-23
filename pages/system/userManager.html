@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>My First Grid</title>
+ 
+ <style type="text/css">
+ 	html,body{
+ 		font-size: 400%;
+ 	}
+ </style>
+<link rel="stylesheet" type="text/css" media="screen" href="../../css/redmond/jquery-ui-1.7.3.custom.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="../../css/ui.jqgrid.css" />
+ 
+<script src="../../js/jquery-1.5.2.min.js" type="text/javascript"></script>
+<script src="../../js/grid.locale-cn.js" type="text/javascript"></script>
+<script src="../../js/jquery.jqGrid.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+ 	$(function(){
+ 			
+        	jQuery("#userList").jqGrid({
+		       	url: "user!showUserList.action",
+		       	datatype: "json",
+		       	mtype:"post",
+		       	height: 465,
+		       	//width:600,
+		       	rowNum: 30,
+		       	rownumbers:true,
+		       	autowidth:true,
+		       	rowList: [10,20,30],
+	        	colNames:['序号','登录名','用户名','工号','部门','用户类型','角色'],
+	          	colModel:[
+	          		{name:'id',index:'r.id', width:60, sorttype:"int",hidden:true},
+	          		{name:'loginName',index:'u.loginName', width:90, sorttype:"string"},
+	          		{name:'name',index:'u.name', width:50, sorttype:"string"},
+	          		{name:'staffId',index:'u.staffId', width:50, sorttype:"string"},
+	          		{name:'organization.fullName',index:'u.organization.fullName', width:150, sorttype:"string"},
+	          		{name:'sysCode',index:'u.sysCode', width:50, sorttype:"string"},
+	          		{name:'roles',index:'', width:70,search:false,sortable:false,formatter:roleShowFormat}
+	          	],
+	          	pager: "#pUserList",
+	          	viewrecords: true,
+	          	jsonReader:{
+	          		repeatitems:false,
+	          		root:"list",
+	          		page:"page.pageNo",
+	          		total:"page.totalPage",
+	          		records:"page.count"
+	          	},
+	          	prmNames:{
+	          		page:"page.pageNo",
+	          		rows:"page.pageSize",
+	          		sort:"sort",
+	          		order:"order"
+	          	}
+	       }).navGrid(
+	       		'#pUserList',
+	       		{edit:false,add:false,del:false,search:true,searchtext:"查询",refreshtext:"刷新"},
+	       		{},
+	       		{},
+	       		{},
+				{closeOnEscpe:true,multipleSearch:true,closeAfterSearch:true}
+			 ).jqGrid("navButtonAdd","#pUserList",
+				{caption:"添加",onClickButton:add,position:"last"}
+			 ).jqGrid("navButtonAdd","#pUserList",
+				{caption:"修改",onClickButton:edit,position:"last"}
+			 ).jqGrid("navButtonAdd","#pUserList",
+				{caption:"删除",onClickButton:del,position:"last"}
+			 ).jqGrid("navButtonAdd","#pUserList",
+				{caption:"设置角色",onClickButton:setAuth,position:"last"}
+			 );
+			
+		function add(){
+			window.location.href="user!inputAdd.action";
+		}
+		
+ 		function edit(){
+ 			
+ 			var id=jQuery("#userList").jqGrid("getGridParam","selrow");
+ 			if(id==null){
+ 				alert("请选择要修改的数据!");
+ 				return ;
+ 			}
+ 			window.location.href="user!inputEdit.action?userId="+id;
+ 		}
+ 		
+ 		function del(){
+ 			var id=jQuery("#userList").jqGrid("getGridParam","selrow");
+ 			if(id==null){
+ 				alert("请选择要修改的数据!");
+ 				return ;
+ 			}
+ 			$.get(
+				"user!deleteUser.action",{
+					"userId":id
+				},function(data,textStatus){
+					if(data=="success"){
+						jQuery("#userList").jqGrid("delRowData",id);
+						alert('删除成功!');
+					}else{
+						alert('登陆超时');
+					}
+				});
+ 		}
+ 		
+ 		function setAuth(){
+ 			var id=jQuery("#userList").jqGrid("getGridParam","selrow");
+ 			if(id==null){
+ 				alert("请选择要修改的数据!");
+ 				return ;
+ 			}
+ 			window.location.href="roleManager!show.action?userId="+id;
+ 		}
+ 		//格式化某列
+ 		function roleShowFormat(cellvalue,options,rowObject){
+ 			
+ 			if(cellvalue.length==0){
+ 				return "<font color='red'>没有配置角色</font>";
+ 			}
+ 			var result="",i;
+ 			for(i=0;i<cellvalue.length;i++){
+ 				result=result+"、"+cellvalue[i].name;
+ 			}
+ 			return result.substring(1);
+ 		}
+ 	});
+ 	
+ 	$(function(){
+ 		$(window).load(function(){
+ 			$("#userList").setGridHeight($(window).height()-70);
+ 			$("#userList").setGridWidth($(window).width()-5);
+ 		})
+ 	})
+</script>
+</head>
+<body>
+<table id="userList"></table>
+<div id="pUserList"></div>
+</body>
+</html>

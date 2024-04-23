@@ -1,0 +1,264 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="../../frame/themes/azure/style.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="../../css/extstyle-lb.css" rel="stylesheet" type="text/css" media="screen">
+	<!--[if IE]>
+<link href="../../frame/themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/>
+<![endif]-->
+	<!--[if lt IE 9]><script src="../../frame/js/speedup.js" type="text/javascript"></script><script src="../../frame/js/jquery-1.11.3.min.js" type="text/javascript"></script><![endif]-->
+	<!--[if gte IE 9]><!-->	
+		<script src="jquery.min.js"></script>
+<style>
+canvas {
+	border: 1px dashed black;
+}
+</style>
+
+<script type="text/javascript" src="xyChart.js"></script>
+<script type="text/javascript" src="mipa.js"></script>
+	<script >
+		$(function(){
+			$("#Reset").click(function(){
+				$("input[id^='id_xi']").val("");	
+				$("input[id^='id_xl']").val("");
+				$("input[id^='id_uf']").val("");
+				$("input[id^='id_df']").val("");		
+			});
+			
+			//设置默认是否显示范围标题
+			if(localStorage!=null){
+				if(localStorage.getItem("showMipaT")=="true"){
+					$("#id_showMipaT").prop("checked",true);
+				}
+			}
+		});
+	
+	
+		
+		var ifStart,ifEnd,lfStart, lfEnd; 
+		//计算
+		function calculate() {			
+			if(chkNumF("id_x")){					
+				ifStart = $("#id_xifStart").val()*1; 
+				ifEnd = $("#id_xifEnd").val()*1; 
+				lfStart = $("#id_xlfStart").val()*1; 
+				lfEnd = $("#id_xlfEnd").val()*1; 
+				
+				if(ifStart>ifEnd || lfStart>lfEnd){
+					alert("结束值应不小于开始值！");
+					return;
+				}
+				
+				
+				
+				
+				//step
+				$("#id_ifStep").html(((ifEnd-ifStart)/30).toFixed(3));
+				$("#id_lfStep").html(((lfEnd-lfStart)/30).toFixed(3));
+				//out
+				$("#id_ufStart").val((ifStart+lfStart).toFixed(3));
+				$("#id_ufEnd").val((ifEnd+lfStart).toFixed(3));
+				
+
+				$("#id_dfStart").val(Math.abs((ifStart-lfStart)).toFixed(3));
+				$("#id_dfEnd").val(Math.abs((ifEnd-lfEnd)).toFixed(3));
+			}
+		}
+	
+		function showChart(ft){	
+			if($("#id_dfEnd").val()=="")return;
+			
+			//储存
+			
+			
+			
+			
+			show(ft);
+		}
+		
+	 		
+				function chkNumF(val){
+			var bl=chkNum(val);
+			//不能为负数
+			$("input[id^='"+val+"']").each(function(){		
+				if($(this).val().indexOf('-')>=0){
+					alert("数据不能为负数！");
+					$(this).focus();
+					bl=false;
+					return false;
+				}
+			});
+
+			return bl;
+		}
+
+		function chkNum(val){
+			var bl=true;
+			var patrn=/^-?(0|[1-9]\d*)(\.\d+)?$/;
+			 $("input[id^='"+val+"']").each(function(){	
+				// $(this).val($(this).val().replace(/[^0-9.]/g,''));	
+				if($(this).val()==''){
+					alert("数据不能为空！");
+					bl=false;
+					$(this).focus();
+					return false;
+				}else if(!patrn.test($(this).val())){
+					alert("数据内容格式不正确！");
+					bl=false;
+					$(this).focus();
+					return false;
+				}
+			});
+			return bl;
+		}
+	</script>
+
+	</head>
+
+<body class="ToolPages">
+<div class="pageContent">
+	<form action="" id="frm" method="post">
+	<input type="hidden" name="fType" id="fType">
+	<input type="hidden" name="fRF" id="fRF">
+	<div class="pageFormContent" layoutH="58">
+	
+		<table   class="edit_table" >	
+		<tbody>		
+		
+			<tr>
+				<td colspan="3"><b>混频产物分析</b></td>
+				
+			</tr>
+			
+			<tr>
+				<td rowspan="3" width="20%">RF输入频率 (GHz)</td>
+				<td >起始值</td>
+				<td >结束值</td>
+			</tr>
+			<tr>
+				<td><input  id="id_xifStart"></td>
+				<td><input  id="id_xifEnd"></td>
+				
+			</tr>			
+			<tr>
+				<td colspan="2" ><label>步长:</label><em><label id="id_ifStep">&nbsp;</label></em></td>
+			</tr>
+				
+			<tr>
+				<td rowspan="3">LO本振频率(GHz)</td>
+				<td >起始值</td>
+				<td >结束值</td>
+			</tr>
+			<tr>
+				<td><input  id="id_xlfStart"></td>
+				<td><input  id="id_xlfEnd"></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" ><label>步长:</label><em><label id="id_lfStep">&nbsp;</label></em></td>
+			</tr>
+			
+			<tr>
+				<td colspan="3">
+					<input type="button"  onclick="calculate()" value="计算">
+					&nbsp;&nbsp;
+					<input type="button" id="Reset" value="重置">				
+				</td>				
+			</tr>
+			
+			
+			<tr>
+				<td rowspan="2">上变频输出频率(GHz)</td>
+				<td >起始值</td>
+				<td >结束值</td>
+			</tr>
+			<tr>
+				<td><input  id="id_ufStart" readonly="readonly"></td>
+				<td><input  id="id_ufEnd" readonly="readonly"></td>
+			</tr>
+			
+			
+			
+			<tr>
+				<td rowspan="2">下变频输出频率(GHz)</td>
+				<td >起始值</td>
+				<td >结束值</td>
+			</tr>
+			<tr>
+				<td><input  id="id_dfStart" readonly="readonly"></td>
+				<td><input  id="id_dfEnd" readonly="readonly"></td>
+			</tr>		
+			<tr>
+				<td>X轴最小刻度值</td>
+				<td style="text-align: left" colspan="2">
+				<input id="id_xPLOTX" value="0"/><em>(0则系统自动取值)</em>
+				</td>
+				
+			</tr>
+			
+			<tr>
+				<td  colspan="3">
+					
+					<input type="button" id="PLOT1X1" value="绘图1X1" onclick="showChart('1');"> &nbsp;
+					<input type="button" id="PLOT2X2" value="绘图2X2" onclick="showChart('2');"> &nbsp;
+					<input type="button" id="PLOT3X3" value="绘图3X3" onclick="showChart('3');"> &nbsp;
+					<input type="button" id="PLOT4X4" value="绘图4X4" onclick="showChart('4');"> &nbsp;
+					<input type="button" id="PLOT5X5" value="绘图5X5" onclick="showChart('5');"> &nbsp;
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+		 <br>
+	</div>
+	</form>
+	<br><br>
+</div>
+
+<div class="pageContent" id="mixerCanvas">
+	<div class="pageFormContent">
+		<br>
+		<canvas id="drawingCanvas" width="1100" height="650"></canvas>
+	</div>
+</div>
+<script> 
+	//面积图
+	var rects=[];
+	var previousSelectedRect;
+	var rfLo,yVal,xVal,xStep;
+	var fStart,fEnd;
+	var isIni=true;
+	var fType;
+	var showMipaT=true;
+	//Typical Mixer Spurious Characteristic
+	var rl = new Array();
+	rl[0] = new Array("","-3","-10","-20","-30","-40");
+	rl[1] = new Array("-40","0","-27","-12","-33","-22");
+	rl[2] = new Array("-60","-46","-52","-46","-56","-47");
+	rl[3] = new Array("-70","-58","-63","-59","-70","-63");
+	rl[4] = new Array("-80","-80","-80","-80","-80","-80");
+	rl[5] = new Array("-80","-80","-80","-80","-80","-80");
+	function show(val){
+
+		canvas = document.getElementById("drawingCanvas");
+		context = canvas.getContext("2d");	
+		isIni=true;
+		
+		fType = val*1;
+		var plotX =  $("#id_xPLOTX").val()*1;
+		//设置x轴跨度
+		if(plotX==0){
+			xNumS=(ifEnd+lfEnd)*fType+10;
+		}else{
+			xNumS=plotX*10;
+		}
+		xNumS = (xNumS/100).toFixed(1);
+		rects=[];
+		drawCanvas();
+	}
+	
+
+</script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<h2 class="contentTitle">树形菜单</h2>
+
+<div id="resultBox"></div>
+
+<div style=" float:left; display:block; margin:10px; overflow:auto; width:200px; height:200px; overflow:auto; border:solid 1px #CCC; line-height:21px; background:#FFF;">
+<p>treeFolder treeCheck expand</p>
+<form method="post" action="demo/common/ajaxDone.html" class="pageForm required-validate" onsubmit="return validateCallback(this)">
+<ul class="tree treeFolder treeCheck expand" oncheck="kkk">
+	<li><a >框架面板</a>
+		<ul>
+			<li><a tname="name" tvalue="value1" checked="true">我的主页</a></li>
+			<li><a tname="name" tvalue="value2">页面一</a></li>
+			<li><a tname="name" tvalue="value3">替换页面一</a></li>
+			<li><a tname="name" tvalue="value4">页面二</a></li>
+			<li><a tname="name" tvalue="value5">页面三</a></li>
+		</ul>
+	</li>
+
+	<li><a tname="name" tvalue="test1">Test 1</a>
+		<ul>
+			<li><a tname="name" tvalue="test1.1">Test 1.1</a>
+				<ul>
+					<li><a tname="name" tvalue="test1.1.1" checked="true">Test 1.1.1</a></li>
+					<li><a tname="name" tvalue="test1.1.2" checked="false">Test 1.1.2</a></li>
+				</ul>
+			</li>
+			<li><a tname="name" tvalue="test1.2" checked="true">Test 1.2</a></li>
+		</ul>
+	</li>
+	<li><a tname="name" tvalue="test2" checked="true">Test 2</a></li>
+</ul>
+
+<input type="submit" value="Submit"/>
+</form>
+</div>
+
+<div style="float:left; display:block; margin:10px; overflow:auto; width:200px; height:200px; border:solid 1px #CCC; line-height:21px; background:#FFF;">
+<p>treeFolder collapse</p>
+<ul class="tree treeFolder collapse">
+	<li><a href="tabsPage.html" target="navTab">框架面板</a>
+		<ul>
+			<li target="selectedObjId" rel="1"><a href="main.html" target="navTab" rel="main">我的主页</a></li>
+			<li target="selectedObjId" rel="2"><a href="newPage1.html" target="navTab" rel="page1">页面一</a></li>
+			<li><a href="newPage2.html" target="navTab" rel="page1">替换页面一</a></li>
+			<li><a href="newPage2.html" target="navTab" rel="page2">页面二</a></li>
+			<li><a href="newPage3.html" target="navTab" rel="page3" title="页面三（自定义标签名）">页面三</a></li>
+		</ul>
+	</li>
+	<li><a href="w_panel.html" target="navTab" rel="w_panel">面板</a></li>
+	<li><a href="w_tabs.html" target="navTab" rel="w_tabs">选项卡面板</a></li>
+	<li><a href="w_dialog.html" target="navTab" rel="w_dialog">弹出窗口</a></li>
+	<li><a href="w_alert.html" target="navTab" rel="w_alert">提示窗口</a></li>
+	<li><a href="w_table.html" target="navTab" rel="w_table">表格容器</a></li>
+	<li><a href="w_tree.html" target="navTab" rel="w_tree">树形菜单</a></li>
+	<li><a href="w_editor.html" target="navTab" rel="w_editor">编辑器</a></li>
+</ul>
+</div>
+<div style=" float:left; display:block; margin:10px; overflow:auto; width:200px; height:200px; border:solid 1px #CCC; line-height:21px; background:#FFF;">
+<ul class="tree">
+	<li><a href="tabsPage.html" target="navTab">框架面板</a>
+		<ul>
+			<li><a href="main.html" target="navTab" rel="main">我的主页</a></li>
+			<li><a href="newPage1.html" target="navTab" rel="page1">页面一</a></li>
+			<li><a href="newPage2.html" target="navTab" rel="page1">替换页面一</a></li>
+			<li><a href="newPage2.html" target="navTab" rel="page2">页面二</a></li>
+			<li><a href="newPage3.html" target="navTab" rel="page3" title="页面三（自定义标签名）">页面三</a></li>
+		</ul>
+	</li>
+	<li><a href="w_panel.html" target="navTab" rel="w_panel">面板</a></li>
+	<li><a href="w_tabs.html" target="navTab" rel="w_tabs">选项卡面板</a></li>
+	<li><a href="w_dialog.html" target="navTab" rel="w_dialog">弹出窗口</a></li>
+	<li><a href="w_alert.html" target="navTab" rel="w_alert">提示窗口</a></li>
+	<li><a href="w_table.html" target="navTab" rel="w_table">表格容器</a></li>
+	<li><a href="w_tree.html" target="navTab" rel="w_tree">树形菜单</a></li>
+	<li><a href="w_editor.html" target="navTab" rel="w_editor">编辑器</a></li>
+	
+</ul>
+</div>
+<div style=" float:left; display:block; margin:10px; overflow:auto; width:200px; height:200px; border:solid 1px #CCC; line-height:21px; background:#FFF;">
+<ul class="tree">
+					
+						<li><a>院领导</a></li>
+						
+					
+						<li><a>院办公室</a></li>
+						
+							<ul>
+								
+									<li><a>管理研究中心</a></li>
+									
+								
+									<li><a>驻京办事处</a></li>
+									
+								
+									<li><a>总师办公室</a></li>
+									
+								
+									<li><a>秘书处</a></li>
+									
+								
+									<li><a>综合处</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>经营发展部</a></li>
+						
+							<ul>
+								
+									<li><a>投资建设处</a></li>
+									
+								
+									<li><a>国际业务处</a></li>
+									
+								
+									<li><a>规划产业处</a></li>
+									
+								
+									<li><a>综合经济处</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>质量技术部</a></li>
+						
+							<ul>
+								
+									<li><a>质量处</a></li>
+									
+								
+									<li><a>产品保证处</a></li>
+									
+								
+									<li><a>软件质量保证中心</a></li>
+									
+								
+									<li><a>工艺管理处</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>财务金融部</a></li>
+						
+							<ul>
+								
+									<li><a>财务金融处</a></li>
+									
+								
+									<li><a>会计核算中心</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>人力资源部</a></li>
+						
+							<ul>
+								
+									<li><a>培训中心</a></li>
+									
+								
+									<li><a>员工发展处</a></li>
+									
+								
+									<li><a>薪酬福利处</a></li>
+									
+								
+									<li><a>人才中心</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>市场研发部</a></li>
+						
+							<ul>
+								
+									<li><a>武器市场处</a></li>
+									
+								
+									<li><a>研发管理处</a></li>
+									
+								
+									<li><a>宇航市场处</a></li>
+									
+								
+									<li><a>研发部综合处</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>物资部</a></li>
+						
+							<ul>
+								
+									<li><a>仓储中心</a></li>
+									
+								
+									<li><a>微波元器件可靠性中心</a></li>
+									
+								
+									<li><a>物资采购处</a></li>
+									
+								
+									<li><a>物资计划处</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>政治工作部</a></li>
+						
+							<ul>
+								
+									<li><a>保密处</a></li>
+									
+								
+									<li><a>保卫处</a></li>
+									
+								
+									<li><a>宣传处</a></li>
+									
+								
+									<li><a>组织处</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>审计监察与风险管理部</a></li>
+						
+							<ul>
+								
+									<li><a>纪检监察处</a></li>
+									
+								
+									<li><a>审计与法律处</a></li>
+									
+								
+									<li><a>风险管理处</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>有效载荷总体部</a></li>
+						
+							<ul>
+								
+									<li><a>卫星通讯载荷总体室</a></li>
+									
+								
+									<li><a>型号管理处</a></li>
+									
+								
+									<li><a>卫星数传系统总体室</a></li>
+									
+								
+									<li><a>载人航天总体室</a></li>
+									
+								
+									<li><a>卫星通信载荷总体室</a></li>
+									
+								
+									<li><a>有效载荷AIT中心</a></li>
+									
+								
+									<li><a>测控与星间数据链路总体室</a></li>
+									
+								
+									<li><a>卫星导航载荷总体室</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>武器装备事业部</a></li>
+						
+							<ul>
+								
+									<li><a>应用论证中心</a></li>
+									
+								
+									<li><a>生产制造中心</a></li>
+									
+								
+									<li><a>系统总体室</a></li>
+									
+								
+									<li><a>武器部综合处</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>空间微波技术重点实验室</a></li>
+						
+					
+						<li><a>综合档案馆</a></li>
+						
+					
+						<li><a>信息中心</a></li>
+						
+							<ul>
+								
+									<li><a>测试</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>计量中心</a></li>
+						
+					
+						<li><a>基本建设办公室</a></li>
+						
+							<ul>
+								
+									<li><a>基建综合处</a></li>
+									
+								
+									<li><a>东区指挥部</a></li>
+									
+								
+									<li><a>南区指挥部</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>工会</a></li>
+						
+							<ul>
+								
+									<li><a>离退休办公室</a></li>
+									
+								
+									<li><a>工会办公室</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>精正实业有限责任公司</a></li>
+						
+							<ul>
+								
+									<li><a>精正实业财务部</a></li>
+									
+								
+									<li><a>公司经理</a></li>
+									
+								
+									<li><a>动力运行部</a></li>
+									
+								
+									<li><a>科研生产保障部</a></li>
+									
+								
+									<li><a>通信站</a></li>
+									
+								
+									<li><a>八里村物业管理部</a></li>
+									
+								
+									<li><a>职工生活服务部</a></li>
+									
+								
+									<li><a>保洁绿化</a></li>
+									
+								
+									<li><a>精正实业行政部</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>空间通信与测控技术研究所</a></li>
+						
+							<ul>
+								
+									<li><a>微系统设计中心</a></li>
+									
+								
+									<li><a>通信技术研究室</a></li>
+									
+								
+									<li><a>空间网络与信息处理技术研究室</a></li>
+									
+								
+									<li><a>通测所综合管理处</a></li>
+									
+								
+									<li><a>测控技术研究室</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>空间数据传输与处理研究所</a></li>
+						
+							<ul>
+								
+									<li><a>数传所综合管理处</a></li>
+									
+								
+									<li><a>信息处理技术研究室</a></li>
+									
+								
+									<li><a>新技术研究室</a></li>
+									
+								
+									<li><a>数据传输技术研究室</a></li>
+									
+								
+									<li><a>激光技术研究室</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>空间微波技术研究所</a></li>
+						
+							<ul>
+								
+									<li><a>微波有源技术研究室</a></li>
+									
+								
+									<li><a>微波所综合管理处</a></li>
+									
+								
+									<li><a>微波功率部件事业部</a></li>
+									
+								
+									<li><a>特种电源技术研究室</a></li>
+									
+								
+									<li><a>微波无源技术研究室</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>空间天线技术研究所</a></li>
+						
+							<ul>
+								
+									<li><a>大天线技术研究室</a></li>
+									
+								
+									<li><a>天线集成测试中心</a></li>
+									
+								
+									<li><a>赋形波束与点波束技术研究室</a></li>
+									
+								
+									<li><a>机构与控制技术研究室</a></li>
+									
+								
+									<li><a>智能天线技术研究室</a></li>
+									
+								
+									<li><a>天线所综合管理处</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>资产管理与保障部</a></li>
+						
+							<ul>
+								
+									<li><a>安全生产处</a></li>
+									
+								
+									<li><a>资产管理处</a></li>
+									
+								
+									<li><a>运行维保中心</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>科研生产部</a></li>
+						
+							<ul>
+								
+									<li><a>宇航能力建设处</a></li>
+									
+								
+									<li><a>综合计划处</a></li>
+									
+								
+									<li><a>外协管理处</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>卫星导航与星间链路技术研究所</a></li>
+						
+							<ul>
+								
+									<li><a>时频技术研究室</a></li>
+									
+								
+									<li><a>卫星所综合管理处</a></li>
+									
+								
+									<li><a>星间链路技术研究室</a></li>
+									
+								
+									<li><a>导航技术研究室</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>空间雷达技术研究所</a></li>
+						
+							<ul>
+								
+									<li><a>雷达所综合管理处</a></li>
+									
+								
+									<li><a>雷达成像技术研究室</a></li>
+									
+								
+									<li><a>雷达探测技术研究室</a></li>
+									
+								
+									<li><a>雷达信号处理技术研究室</a></li>
+									
+								
+							</ul>
+						
+					
+						<li><a>空间有效载荷系统创新中心</a></li>
+						
+					
+						<li><a>空间电子产品制造中心</a></li>
+						
+							<ul>
+								
+									<li><a>综合办公室</a></li>
+									
+								
+									<li><a>测试及环境试验中心</a></li>
+									
+								
+									<li><a>生产计划处</a></li>
+									
+								
+									<li><a>质检处</a></li>
+									
+								
+									<li><a>制造中心财务处</a></li>
+									
+								
+									<li><a>EMC检测中心</a></li>
+									
+								
+									<li><a>产品工程中心</a></li>
+									
+								
+									<li><a>机械加工车间</a></li>
+									
+								
+									<li><a>电化学车间</a></li>
+									
+								
+									<li><a>整机集成及调试车间</a></li>
+									
+								
+									<li><a>工艺技术处</a></li>
+									
+								
+									<li><a>结构技术研究室</a></li>
+									
+								
+							</ul>
+						
+					
+				</ul>
+
+
+</div>
+
+<script type="text/javascript">
+function kkk(){
+	var json = arguments[0], result="";
+//	alert(json.checked);
+
+	$(json.items).each(function(i){
+		result += "<p>name:"+this.name + " value:"+this.value+" text: "+this.text+"</p>";
+	});
+	$("#resultBox").html(result);
+	
+}
+</script>
